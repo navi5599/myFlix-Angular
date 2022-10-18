@@ -1,0 +1,38 @@
+.movie_card {
+  width: 250px;
+  height: 480px;
+}
+
+img {
+  width: 250px;
+  height: 350px;
+  object-fit: contain;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: 15px;
+  width: 92.5%;
+  margin: 20px auto;
+}
+
+.mat-icon {
+  position: absolute;
+  right: 17px;
+  bottom: 40px;
+  cursor: pointer;
+}
+
+.director:hover {
+  cursor: pointer;
+  color: #4050b5;
+}
+
+.example-tooltip-purple {
+  background: #4050b5;
+}
+
+.example-tooltip-red {
+  background: red;
+}

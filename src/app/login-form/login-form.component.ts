@@ -1,7 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { MatDialogRef } from '@angular/material/dialog';
-import { UserRegistrationService } from '../fetch-api-data.service';
+import { FetchApiDataService } from '../fetch-api-data.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login-form',
@@ -14,10 +15,13 @@ export class LoginFormComponent implements OnInit {
     Password: '',
   };
 
+  loading = false;
+
   constructor(
-    public fetchApiData: UserRegistrationService,
+    public fetchApiData: FetchApiDataService,
     public dialogRef: MatDialogRef<LoginFormComponent>,
-    public snackBar: MatSnackBar
+    public snackBar: MatSnackBar,
+    private router: Router
   ) {}
 
   ngOnInit(): void {}
@@ -32,7 +36,9 @@ export class LoginFormComponent implements OnInit {
         this.snackBar.open('Welcome back!', 'OK', {
           duration: 2000,
         });
+        this.router.navigate(['movies']);
       },
+
       (response) => {
         console.log(response);
         this.snackBar.open(response, 'OK', {
@@ -40,5 +46,9 @@ export class LoginFormComponent implements OnInit {
         });
       }
     );
+  }
+
+  login(): void {
+    this.loading = true;
   }
 }

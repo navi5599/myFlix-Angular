@@ -1,8 +1,10 @@
-<mat-card>
+<mat-card class="edit-profile-dialog">
   <mat-card-header>
-    <mat-card-title>Sign Up!</mat-card-title>
+    <mat-card-title class="edit-profile-dialog-title"
+      >Change your Info</mat-card-title
+    >
   </mat-card-header>
-  <mat-card-content>
+  <mat-card-content class="edit-profile-dialog-content">
     <form>
       <mat-form-field>
         <input
@@ -11,7 +13,6 @@
           placeholder="Name"
           type="text"
           name="Name"
-          required
         />
       </mat-form-field>
       <mat-form-field>
@@ -21,50 +22,39 @@
           placeholder="Username"
           type="text"
           name="Username"
-          required
         />
       </mat-form-field>
       <mat-form-field>
         <input
           matInput
           [(ngModel)]="userData.Password"
-          type="password"
           placeholder="Password"
+          type="password"
           name="Password"
-          required
         />
       </mat-form-field>
       <mat-form-field>
         <input
           matInput
           [(ngModel)]="userData.Email"
-          type="email"
           placeholder="Email"
+          type="email"
           name="Email"
-          required
-        />
-      </mat-form-field>
-      <mat-form-field>
-        <input
-          matInput
-          [(ngModel)]="userData.Birthday"
-          type="date"
-          placeholder="Birthday"
-          name="Birthday"
         />
       </mat-form-field>
     </form>
   </mat-card-content>
-  <mat-card-actions>
+  <mat-card-actions class="edit-profile-actions">
+    <button mat-raised-button (click)="editUser()" color="primary">
+      Update
+    </button>
     <button
-      mat-raised-button
-      (click)="registerUser()"
-      [class.spinner]="loading"
-      [disabled]="loading"
-      (click)="signup()"
+      mat-stroked-button
+      aria-label="Close the edit profile button"
+      mat-dialog-close
       color="primary"
     >
-      Sign Up
+      X
     </button>
   </mat-card-actions>
 </mat-card>

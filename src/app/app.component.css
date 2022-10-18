@@ -1,11 +1,1 @@
-.main-page {
-  text-align: center;
-  height: 100%;
-  position: absolute;
-  top: 40%;
-  left: 40%;
-}
 
-button:hover {
-  opacity: 0.88;
-}

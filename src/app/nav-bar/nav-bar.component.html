@@ -1,0 +1,19 @@
+<mat-toolbar class="navbar">
+  <span>myFlix</span>
+  <button
+    style="margin-left: 40px"
+    color="primary"
+    mat-button
+    (click)="goToMovies()"
+  >
+    <mat-icon>movie</mat-icon> Movies
+  </button>
+  <button color="primary" mat-button (click)="goToProfile()">
+    <mat-icon>account_box</mat-icon> Profile
+  </button>
+  <span class="example-spacer"></span>
+
+  <button color="primary" mat-button (click)="logOut()" class="logout-button">
+    <mat-icon>logout</mat-icon> Logout
+  </button>
+</mat-toolbar>

@@ -26,8 +26,15 @@
       </mat-form-field>
     </form>
   </mat-card-content>
-  <mat-card-actions>
-    <button mat-raised-button (click)="loginUser()" color="primary">
+  <mat-card-actions class="login-actions">
+    <button
+      mat-raised-button
+      (click)="loginUser()"
+      [class.spinner]="loading"
+      [disabled]="loading"
+      (click)="login()"
+      color="primary"
+    >
       Log in!
     </button>
   </mat-card-actions>
