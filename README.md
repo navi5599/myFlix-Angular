@@ -8,11 +8,35 @@ It is a Single-page application (SPA) built using Angular that fetches data from
 
 ## Instructions
 
-- Clone the repository running `git clone https://github.com/navi5599/myFlix-Angular.git` in the terminal.
-- Head to the project folder and install dependencies with `npm install`.
-- You should also install Angular CLI running `npm install -g @angular/cli`
-- Run `ng serve` to build and start the application.
-- Open up your app on `http://localhost:4200/`
+Before doing anything, of course, make sure Node and npm are available. To install node, visit : https://nodejs.org/en/download/
+
+Then follow steps below
+
+Run command to clone repository:
+
+```
+$ git clone https://github.com/navi5599/myFlix-Angular.git
+```
+
+After cloning repo, you should install all dependencies,starting with Angular CLI:
+
+```
+$ npm install -g @angular/cli
+```
+
+In your root project folder, just run
+
+```
+$ npm install
+```
+
+After that run
+
+```
+$ ng serve
+```
+
+Open up your app on `http://localhost:4200/`
 
 ### Screenshot of the app:
 
