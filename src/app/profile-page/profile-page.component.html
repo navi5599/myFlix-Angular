@@ -36,8 +36,8 @@
 
 <div class="favorite-movies">
   <h2>My Favorite Movies</h2>
-  <div class="flex-container">
-    <mat-card *ngFor="let movie of favMovies; let i = index" class="flex-item">
+  <div class="container">
+    <mat-card *ngFor="let movie of favMovies; let i = index" class="movie_card">
       <mat-card-header>
         <mat-card-title>{{ movie.Title }}</mat-card-title>
         <mat-card-subtitle
@@ -46,7 +46,7 @@
       </mat-card-header>
       <img src="{{ movie.ImageURL }}" class="poster" />
       <mat-card-actions>
-        <mat-icon (click)="removeFavorites(movie._id)" class="icon-remove-fav"
+        <mat-icon (click)="removeFavorites(movie._id)" class="delete-icon"
           >delete</mat-icon
         >
       </mat-card-actions>

@@ -24,31 +24,33 @@ export class ProfilePageComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.getUser();
-    this.getFavMoviesID();
-    this.getFavMovies();
+    this.getUserData();
   }
 
-  getUser(): void {
+  //Works also
+
+  // getFavMovies(): void {
+  //   this.fetchApiData.getAllMovies().subscribe((resp: any) => {
+  //     console.log(resp, 'resp');
+  //     this.favMovies = resp.filter((m: any) => {
+  //       if (this.favMoviesID.includes(m._id)) {
+  //         return m;
+  //       }
+  //     });
+  //     console.log(this.favMovies, 'this.favMovies');
+  //     return this.favMovies;
+  //   });
+  // }
+
+  getUserData(): void {
     this.fetchApiData.getUser().subscribe((resp: any) => {
       this.user = resp;
-      return this.user;
-    });
-  }
-
-  getFavMoviesID(): void {
-    this.fetchApiData.getUser().subscribe((resp: any) => {
-      this.favMoviesID = resp.FavoriteMovies;
-      return this.favMoviesID;
-    });
-  }
-
-  getFavMovies(): void {
-    this.fetchApiData.getAllMovies().subscribe((resp: any) => {
-      this.favMovies = resp.filter((m: any) =>
-        this.favMoviesID.includes(m._id)
-      );
-      return this.favMovies;
+      this.fetchApiData.getAllMovies().subscribe((resp: any) => {
+        this.favMovies = resp.filter((m: any) =>
+          this.user.FavoriteMovies.includes(m._id)
+        );
+      });
+      return this.user, this.favMovies;
     });
   }
 

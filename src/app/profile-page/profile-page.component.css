@@ -6,13 +6,40 @@
 .user-profile-page {
   display: flex;
   justify-content: center;
-
-  align-items: center;
-  height: 80vh;
+  margin-top: 30px;
+  margin-bottom: 60px;
 }
 
 .user-profile-card-header,
 .user-profile-actions {
   display: flex;
   justify-content: center;
+}
+
+.movie_card {
+  width: 250px;
+  height: 480px;
+}
+
+img {
+  width: 250px;
+  height: 350px;
+  object-fit: contain;
+}
+
+h2 {
+  text-align: center;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: 15px;
+  width: 92.5%;
+  margin: 20px auto;
+}
+
+.delete-icon:hover {
+  cursor: pointer;
+  color: #4050b5;
 }
