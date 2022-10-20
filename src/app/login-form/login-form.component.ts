@@ -26,6 +26,10 @@ export class LoginFormComponent implements OnInit {
 
   ngOnInit(): void {}
 
+  /**
+   * sends form inputs for user login to backend via fetchApiData Service
+   */
+
   loginUser(): void {
     this.fetchApiData.userLogin(this.userCredentials).subscribe(
       (response) => {
@@ -48,6 +52,10 @@ export class LoginFormComponent implements OnInit {
       }
     );
   }
+
+  /**
+   * Sets loading to false which is used to render loading animation on button
+   */
 
   login(): void {
     this.loading = true;

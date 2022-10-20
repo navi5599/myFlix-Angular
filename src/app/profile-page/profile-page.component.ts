@@ -27,24 +27,16 @@ export class ProfilePageComponent implements OnInit {
     this.getUserData();
   }
 
-  //Works also
-
-  // getFavMovies(): void {
-  //   this.fetchApiData.getAllMovies().subscribe((resp: any) => {
-  //     console.log(resp, 'resp');
-  //     this.favMovies = resp.filter((m: any) => {
-  //       if (this.favMoviesID.includes(m._id)) {
-  //         return m;
-  //       }
-  //     });
-  //     console.log(this.favMovies, 'this.favMovies');
-  //     return this.favMovies;
-  //   });
-  // }
-
+  /**
+   * Function that gets user data, and filters favorite movies
+   * @function getUserData
+   * @returns user, favorite movies
+   *
+   */
   getUserData(): void {
     this.fetchApiData.getUser().subscribe((resp: any) => {
       this.user = resp;
+      //filter movies with same ids
       this.fetchApiData.getAllMovies().subscribe((resp: any) => {
         this.favMovies = resp.filter((m: any) =>
           this.user.FavoriteMovies.includes(m._id)
@@ -54,12 +46,19 @@ export class ProfilePageComponent implements OnInit {
     });
   }
 
+  /**
+   * Opens dialog for editing user
+   */
   openEditProfileDialog(): void {
     this.dialog.open(EditProfileComponent, {
       width: '300px',
     });
   }
 
+  /**
+   * Function used to delete users profile
+   * @function deleteProfile
+   */
   deleteProfile(): void {
     if (
       confirm(

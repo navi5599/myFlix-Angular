@@ -21,6 +21,12 @@ export class EditProfileComponent implements OnInit {
 
   ngOnInit(): void {}
 
+  /**
+   *
+   * Functions sends new data to backend,
+   * @returns user object with updated data
+   *
+   */
   editUser(): void {
     this.fetchApiData.editUser(this.userData).subscribe((result) => {
       this.dialogRef.close();
