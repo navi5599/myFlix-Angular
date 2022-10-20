@@ -2,26 +2,59 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.5.
 
-## Development server
+For live version, check this link: [myFlix_Angular](https://navi5599.github.io/myFlix-Angular/welcome)
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+It is a Single-page application (SPA) built using Angular that fetches data from [myFlix API](https://my-flix-app-1910.herokuapp.com/api-doc/)
 
-## Code scaffolding
+## Instructions
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- Clone the repository running `git clone https://github.com/navi5599/myFlix-Angular.git` in the terminal.
+- Head to the project folder and install dependencies with `npm install`.
+- You should also install Angular CLI running `npm install -g @angular/cli`
+- Run `ng serve` to build and start the application.
+- Open up your app on `http://localhost:4200/`
 
-## Build
+### Screenshot of the app:
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+ <img src="/img/movie1.png" alt="Alt text" style="display: inline-block; margin: 0 auto; max-width: 800px">
 
-## Running unit tests
+ <img src="/img/movie2.png" alt="Alt text" style="display: inline-block; margin: 0 auto; max-width: 800px">
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Features
 
-## Running end-to-end tests
+#### Welcome page
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+- Welcome page displays button for Login or Sign up
 
-## Further help
+#### Registration page
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+- On this page, user can register providing necessary info, such as Name, Username, Password and Email.
+
+#### Login page
+
+- User can Log in using existing credentials
+
+#### Movie-card component
+
+- Returns a list of all movies to the user
+- Allows users to add a movie to their list of favorites
+- Allows to click on specific buttons for more details (i.e., genre, director)
+
+#### Genre dialog
+
+- Returns data about a genre (name and description)
+
+#### Director dialog
+
+- Returns data about a director (name and bio)
+
+#### Description dialog
+
+- Returns the Description of the movie
+
+#### Profile component
+
+- Allows users to update their user info
+- Allows existing users to delete their account
+- Displays favorite movies
+- Allows users to remove a movie from their list of favorites.
